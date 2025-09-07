@@ -9,9 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.locks.ReentrantLock;
 
-/**
- * Объект для работы со статистикой показателей
- */
 public class IStatisticsDAO implements StatisticsDAO {
     private final Connection connection;
     private final ReentrantLock totalLock = new ReentrantLock();

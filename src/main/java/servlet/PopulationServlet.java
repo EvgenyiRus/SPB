@@ -4,6 +4,7 @@ import model.Gender;
 import model.Person;
 import org.slf4j.Logger;
 import service.PersonService;
+import service.impl.IPersonService;
 import util.DatabaseUtil;
 import util.JsonUtil;
 
@@ -40,7 +41,7 @@ public class PopulationServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         try {
-            this.personService = new PersonService(DatabaseUtil.getConnection(), 99, 0);
+            this.personService = new IPersonService(DatabaseUtil.getConnection(), 99, 0);
         } catch (SQLException e) {
             e.printStackTrace();
         }
